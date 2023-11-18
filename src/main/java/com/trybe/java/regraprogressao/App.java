@@ -1,6 +1,5 @@
 package com.trybe.java.regraprogressao;
 
-import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -9,12 +8,17 @@ import java.util.Scanner;
  */
 public class App {
 
+  /**
+   * Método para calcular resultado e retornar informação do mesmo.
+   *
+   * @param notas notas das atividades do aluno.
+   * @param pesos peso de cada atividade feita.
+   */
   public static void informarResultado(int[] notas, int[] pesos) {
     int calculoNota = 0;
     for (int i = 0; i < notas.length; i++) {
       calculoNota += (notas[i] * pesos[i]);
     }
-    DecimalFormat df = new DecimalFormat("##.#");
     double resultado = calculoNota / 100f;
 
     if (resultado >= 85) {
