@@ -1,6 +1,5 @@
 package com.trybe.java.regraprogressao;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -42,7 +41,6 @@ public class App {
 
     int totalAtividades = Integer.parseInt(inputAtividadesQtd);
 
-    String[] nomeAtividades = new String[totalAtividades];
     int[] pesoAtividades = new int[totalAtividades];
     int[] notaAtividades = new int[totalAtividades];
     int somaPeso = 0;
@@ -59,7 +57,6 @@ public class App {
 
       int peso = Integer.parseInt(inputPeso);
       int nota = Integer.parseInt(inputNota);
-      nomeAtividades[i] = nomeAtividade;
       pesoAtividades[i] = peso;
       notaAtividades[i] = nota;
       somaPeso += pesoAtividades[i];
@@ -69,9 +66,6 @@ public class App {
     } else {
       informarResultado(notaAtividades, pesoAtividades);
     }
-
-    System.out.println(Arrays.toString(nomeAtividades));
-    System.out.println(Arrays.toString(pesoAtividades));
     scanner.close();
   }
 }
