@@ -1,5 +1,6 @@
 package com.trybe.java.regraprogressao;
 
+import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -7,6 +8,24 @@ import java.util.Scanner;
  * App.
  */
 public class App {
+
+  public static void informarResultado(int[] notas, int[] pesos) {
+    int calculoNota = 0;
+    for (int i = 0; i < notas.length; i++) {
+      calculoNota += (notas[i] * pesos[i]);
+    }
+    DecimalFormat df = new DecimalFormat("##.#");
+    double resultado = calculoNota / 100f;
+
+    if (resultado >= 85) {
+      System.out.println("Parabéns! Você alcançou " + resultado
+          + "%! E temos o prazer de informar que você obteve aprovação!");
+    } else {
+      System.out.println(
+          "Lamentamos informar que, com base na sua pontuação alcançada neste período, " + resultado
+              + "%, você não atingiu a pontuação mínima necessária para sua aprovação.");
+    }
+  }
 
   /**
    * Método main.
@@ -43,6 +62,8 @@ public class App {
     }
     if (somaPeso != 100) {
       System.out.println("A soma dos pesos é diferente de 100!");
+    } else {
+      informarResultado(notaAtividades, pesoAtividades);
     }
 
     System.out.println(Arrays.toString(nomeAtividades));
